@@ -2,7 +2,13 @@ import React from 'react';
 import PropTypes from  'prop-types';
 
 
-const Card = ({ items, onClick }) => (
+const Card = ({ items, addProduct }) => {
+    const openModal = () => {
+        document.body.style.overflow = "hidden";
+        const getModal = document.querySelector(".modal");
+        getModal.style.display = "block";
+    };
+    return(
     <div className="Card-container">
         {items.map(({ id, img, text, price }) => {
             return (
@@ -11,21 +17,20 @@ const Card = ({ items, onClick }) => (
                     <h3>{text}</h3>
                     <p>$ {price}<span>.00</span></p>
                     <div className="hide-btn-block">
-                       <button onClick={onClick}>Купить</button>
+                       <button onClick={() => { openModal(); addProduct((new Date().getTime()), text, img, price)}}>Купить</button>
                     </div>
                 </div>
             )
         })}
     </div>
-);
+    )
+};
 
 Card.propTypes = {
     items: PropTypes.array,
-    onClick: PropTypes.func
 }
 Card.defaultProps = {
     items: [],
-    onClick: () =>{}
 }
 
 export default Card;

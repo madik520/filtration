@@ -1,11 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Header = ({ onChange, items, defaultChecked }) => (
+const filter = [
+    {
+        id: "Phones",
+        text: "Смартфоны",
+    },
+    {
+        id: "Notebooks",
+        text: "Планшеты/Ноутбуки",
+    },
+    {
+        id: "Watches",
+        text: "Часы",
+    },
+    {
+        id: "Accessories",
+        text: "Аксессуары",
+    },
+    {
+        id: "Other",
+        text: "Другое",
+    },
+];
+
+const Header = ({ onChange,  defaultChecked }) => (
     <header className="row">
         <div className="col-12">
             <ul className="checkbox-list">
-                { items.map(({ id, text, active }) => {
+                { filter.map(({ id, text }) => {
                     return <li key={id}>
                     <label className="checkbox">
                         <input id={id} type="checkbox" onChange={onChange} defaultChecked={defaultChecked} />
@@ -20,13 +43,11 @@ const Header = ({ onChange, items, defaultChecked }) => (
 
 Header.propTypes = {
     onChange: PropTypes.func,
-    items: PropTypes.array,
     defaultChecked: PropTypes.bool
 }
 
 Header.defaultProps = {
     onChange: () => {},
-    items: [],
     defaultChecked: true
 }
 

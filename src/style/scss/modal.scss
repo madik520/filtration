@@ -1,0 +1,161 @@
+.modal{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(34, 33, 33, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.modal-container{
+    max-width: 690px;
+    height: 360px;
+    background: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 23px;
+    border-bottom: 1px solid #e4e4e4;
+    color: #222222;
+    i{
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+}
+.modal-main{
+    display: flex;
+    justify-content: space-around;
+    img{
+        margin-top: 20px;
+        max-height: 250px;
+    }
+    .modal-order{
+        width: 40%;
+        margin-top: 10px;
+        margin-right: 50px;
+        color: #222222;
+        line-height: 0.5;
+        select{
+            width:125px;
+            height: 40px;
+            padding-left: 15px;
+            appearance:none;
+            -webkit-appearance:none;
+            -moz-appearance:none;
+            -ms-appearance:none;
+            border:1px solid #e4e4e4;
+            border-radius: 5px;
+            background:url('http://www.free-icons-download.net/images/small-down-arrow-icon-15593.png');
+            background-repeat:no-repeat;
+            background-size:16px 17px;
+            background-position:95px center;
+            cursor: pointer;
+        }
+        p{
+            font-weight: bold;
+        }
+        a{
+            position: relative;
+            bottom: 10px;
+            text-decoration: none;
+            color: #ff7e00;
+            font-size: 1.2rem;
+        }
+        .select-block{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .modal-price{
+            display: flex;
+            justify-content: space-between;
+            p{
+                position: relative;
+                bottom: 5px;
+                font-size: 2.2rem;
+                span{
+                    position: relative;
+                    bottom: 13px;
+                    font-size: 1.2rem;
+                }
+            }
+            .btn-buy{
+                margin-top: 20px;
+                margin-right: 25px;
+                width: 100px;
+                height: 40px;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                background-color: #ff7e00;
+                color: white;
+                cursor: pointer;
+            }
+        }
+        
+    }
+}
+
+@media screen and (max-width: 600px){
+    .modal-container{
+        height: 450px;
+    }
+}
+@media screen and (max-width: 414px){
+    .modal-main{
+        .modal-order{
+            width: 50%;
+            margin-right: 0px;
+            line-height: 0;
+            .modal-price{
+                .btn-buy{
+                    margin-right: 10px;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 375px){
+    .modal-main{
+        .modal-order{
+            a{
+                font-size: 1rem;
+            }
+            .modal-price{
+                .btn-buy{
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 320px){
+    .modal-main{
+        .modal-order{
+            a{
+                line-height: 1;
+            }
+            .modal-price{
+                display: block;
+                .btn-buy{
+                    margin-top: 0;
+                    margin-right: 0;
+                    margin-left: 0;
+                    position: relative;
+                    bottom: 25px;
+                }
+            }
+        }
+    }
+}

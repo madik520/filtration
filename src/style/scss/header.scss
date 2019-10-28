@@ -47,5 +47,29 @@
     }
 }
 
-
-
+@media screen and (max-width: 800px){
+    .checkbox-list{
+        li{
+            padding-right: 30px;
+        }
+    }
+}
+@media screen and (max-width: 600px){
+    .checkbox-list{
+        justify-content: center;
+        li{
+            border: none;
+        }
+    }
+}
+@media screen and (max-width: 425px){
+    .checkbox-list{
+        justify-content: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        li{
+            width: 100%;
+        }
+    }
+}
